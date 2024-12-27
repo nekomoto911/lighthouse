@@ -644,7 +644,7 @@ impl Service {
                 .update_deposit_cache(Some(new_block_numbers_deposit))
                 .await;
 
-            // Reset the `last_procesed block` to the last valid deposit's block number.
+            // Reset the `last_proceeds block` to the last valid deposit's block number.
             // This will ensure that the next batch of blocks fetched is immediately after
             // the last cached valid deposit allowing us to recover from scenarios where
             // the deposit cache gets corrupted due to invalid responses from eth1 nodes.

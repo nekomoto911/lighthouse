@@ -516,7 +516,7 @@ impl ValidatorsDiff {
 
             if let Some(x) = xs.get_mut(index as usize) {
                 // Note: a pubkey change implies index re-use. In that case over-write
-                // withdrawal_credentials and slashed inconditionally as their default values
+                // withdrawal_credentials and slashed unconditionally as their default values
                 // are valid values.
                 let pubkey_changed = diff.pubkey != *EMPTY_PUBKEY;
                 if pubkey_changed {

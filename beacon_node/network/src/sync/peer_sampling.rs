@@ -93,7 +93,7 @@ impl<T: BeaconChainTypes> Sampling<T> {
             "column_selection" => ?request.column_selection()
         );
 
-        // TOOD(das): If a node has very little peers, continue_sampling() will attempt to find enough
+        // TODO(das): If a node has very little peers, continue_sampling() will attempt to find enough
         // to sample here, immediately failing the sampling request. There should be some grace
         // period to allow the peer manager to find custody peers.
         let result = request.continue_sampling(cx);
@@ -115,7 +115,7 @@ impl<T: BeaconChainTypes> Sampling<T> {
         cx: &mut SyncNetworkContext<T>,
     ) -> Option<(SamplingRequester, SamplingResult)> {
         let Some(request) = self.requests.get_mut(&id.id) else {
-            // TOOD(das): This log can happen if the request is error'ed early and dropped
+            // TODO(das): This log can happen if the request is error'ed early and dropped
             debug!(self.log, "Sample downloaded event for unknown request"; "id" => ?id);
             return None;
         };
@@ -138,7 +138,7 @@ impl<T: BeaconChainTypes> Sampling<T> {
         cx: &mut SyncNetworkContext<T>,
     ) -> Option<(SamplingRequester, SamplingResult)> {
         let Some(request) = self.requests.get_mut(&id.id) else {
-            // TOOD(das): This log can happen if the request is error'ed early and dropped
+            // TODO(das): This log can happen if the request is error'ed early and dropped
             debug!(self.log, "Sample verified event for unknown request"; "id" => ?id);
             return None;
         };
@@ -438,7 +438,7 @@ impl<T: BeaconChainTypes> ActiveSamplingRequest<T> {
                 debug!(self.log, "Sample verification success"; "block_root" => %self.block_root, "column_indexes" => ?column_indexes);
                 metrics::inc_counter_vec(&metrics::SAMPLE_VERIFY_RESULT, &[metrics::SUCCESS]);
 
-                // Valid, continue_sampling will maybe consider sampling succees
+                // Valid, continue_sampling will maybe consider sampling succeeds
                 for column_index in column_indexes {
                     let Some(request) = self.column_requests.get_mut(column_index) else {
                         warn!(

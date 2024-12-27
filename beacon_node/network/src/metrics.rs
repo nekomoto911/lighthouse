@@ -443,7 +443,7 @@ pub static SYNC_ACTIVE_NETWORK_REQUESTS: LazyLock<Result<IntGaugeVec>> = LazyLoc
 });
 pub static SYNC_UNKNOWN_NETWORK_REQUESTS: LazyLock<Result<IntCounterVec>> = LazyLock::new(|| {
     try_create_int_counter_vec(
-        "sync_unknwon_network_request",
+        "sync_unknown_network_request",
         "Total count of network messages received for unknown active requests",
         &["type"],
     )

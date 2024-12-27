@@ -1595,7 +1595,7 @@ fn test_parent_lookup_too_many_attempts() {
             // Send the stream termination
 
             // Note, previously we would send the same lookup id with a stream terminator,
-            // we'd ignore it because we'd intrepret it as an unrequested response, since
+            // we'd ignore it because we'd interpret it as an unrequested response, since
             // we already got one response for the block. I'm not sure what the intent is
             // for having this stream terminator line in this test at all. Receiving an invalid
             // block and a stream terminator with the same Id now results in two failed attempts,

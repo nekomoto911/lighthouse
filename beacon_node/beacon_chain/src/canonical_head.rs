@@ -383,13 +383,13 @@ impl<T: BeaconChainTypes> CanonicalHead<T> {
 
     /// Access a read-lock for fork choice.
     pub fn fork_choice_read_lock(&self) -> RwLockReadGuard<BeaconForkChoice<T>> {
-        let _timer = metrics::start_timer(&metrics::FORK_CHOICE_READ_LOCK_AQUIRE_TIMES);
+        let _timer = metrics::start_timer(&metrics::FORK_CHOICE_READ_LOCK_ACQUIRE_TIMES);
         self.fork_choice.read()
     }
 
     /// Access a write-lock for fork choice.
     pub fn fork_choice_write_lock(&self) -> RwLockWriteGuard<BeaconForkChoice<T>> {
-        let _timer = metrics::start_timer(&metrics::FORK_CHOICE_WRITE_LOCK_AQUIRE_TIMES);
+        let _timer = metrics::start_timer(&metrics::FORK_CHOICE_WRITE_LOCK_ACQUIRE_TIMES);
         self.fork_choice.write()
     }
 }
@@ -1248,7 +1248,7 @@ pub fn find_reorg_slot<E: EthSpec>(
     //
     // The iterator will be skipped until the next value returns `lowest_slot`.
     //
-    // This is a macro instead of a function or closure due to the complex types invloved
+    // This is a macro instead of a function or closure due to the complex types involved
     // in all the iterator wrapping.
     macro_rules! aligned_roots_iter {
         ($state: ident, $block_root: ident) => {

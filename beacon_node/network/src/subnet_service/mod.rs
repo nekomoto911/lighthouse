@@ -407,7 +407,7 @@ impl<T: BeaconChainTypes> SubnetService<T> {
 
         let discovery_subnets: Vec<SubnetDiscovery> = subnets_to_discover
             .filter_map(|(subnet, relevant_slot)| {
-                // We generate discovery requests for all subnets (even one's we are permenantly
+                // We generate discovery requests for all subnets (even one's we are permanently
                 // subscribed to) in order to ensure our peer counts are satisfactory to perform the
                 // necessary duties.
 

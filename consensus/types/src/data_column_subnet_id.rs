@@ -71,7 +71,7 @@ impl DataColumnSubnetId {
     }
 
     /// Compute the custody subnets for a given node id with the default `custody_requirement`.
-    /// This operation should be infallable, and empty iterator is returned if it fails unexpectedly.
+    /// This operation should be infallible, and empty iterator is returned if it fails unexpectedly.
     pub fn compute_custody_requirement_subnets<E: EthSpec>(
         node_id: [u8; 32],
         spec: &ChainSpec,

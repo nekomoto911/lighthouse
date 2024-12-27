@@ -529,7 +529,7 @@ impl<E: EthSpec, Hot: ItemStore<E>, Cold: ItemStore<E>> HotColdDB<E, Hot, Cold> 
             .ok_or(Error::AddPayloadLogicError)
     }
 
-    /// Prepare a signed beacon block for storage in the datbase *without* its payload.
+    /// Prepare a signed beacon block for storage in the database *without* its payload.
     pub fn blinded_block_as_kv_store_ops(
         &self,
         key: &Hash256,
@@ -2909,7 +2909,7 @@ impl<E: EthSpec, Hot: ItemStore<E>, Cold: ItemStore<E>> HotColdDB<E, Hot, Cold> 
         ];
 
         // This function is intended to be able to clean up leftover V21 freezer database stuff in
-        // the case where the V22 schema upgrade failed *after* commiting the version increment but
+        // the case where the V22 schema upgrade failed *after* committing the version increment but
         // *before* cleaning up the freezer DB.
         //
         // We can remove this once schema V21 has been gone for a while.

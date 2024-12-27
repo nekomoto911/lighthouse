@@ -556,7 +556,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_contiguous_slots() {
+                fn multiple_contiguous_slots() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -619,7 +619,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_non_contiguous_slots() {
+                fn multiple_non_contiguous_slots() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 

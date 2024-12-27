@@ -779,7 +779,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_contiguous_periods() {
+                fn multiple_contiguous_periods() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -836,7 +836,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_non_contiguous_periods() {
+                fn multiple_non_contiguous_periods() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -950,7 +950,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_contiguous_periods_same_subcommittee() {
+                fn multiple_contiguous_periods_same_subcommittee() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -1007,7 +1007,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_non_contiguous_periods_same_subcommitte() {
+                fn multiple_non_contiguous_periods_same_subcommitte() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -1059,7 +1059,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_contiguous_periods_different_subcommittee() {
+                fn multiple_contiguous_periods_different_subcommittee() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 
@@ -1116,7 +1116,7 @@ mod tests {
                 }
 
                 #[test]
-                fn mulitple_non_contiguous_periods_different_subcommitte() {
+                fn multiple_non_contiguous_periods_different_subcommitte() {
                     let mut store = $type::default();
                     let max_cap = store.max_capacity();
 

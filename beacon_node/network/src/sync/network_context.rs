@@ -1006,7 +1006,7 @@ impl<T: BeaconChainTypes> SyncNetworkContext<T> {
         // Note: need to remove the request to borrow self again below. Otherwise we can't
         // do nested requests
         let Some(mut request) = self.custody_by_root_requests.remove(&id.requester) else {
-            // TOOD(das): This log can happen if the request is error'ed early and dropped
+            // TODO(das): This log can happen if the request is error'ed early and dropped
             debug!(self.log, "Custody column downloaded event for unknown request"; "id" => ?id);
             return None;
         };

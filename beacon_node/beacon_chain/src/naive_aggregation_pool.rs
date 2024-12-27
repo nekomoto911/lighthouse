@@ -722,13 +722,13 @@ mod tests {
             attestation_electra.data().tree_hash_root()
         );
         // for an electra attestation, the tree_hash_root() of the key should be dependent on which committee bit is set
-        let committe_bits = attestation_electra
+        let committee_bits = attestation_electra
             .committee_bits_mut()
             .expect("should get committee bits");
-        committe_bits
+        committee_bits
             .set(0, false)
             .expect("should set committee bit");
-        committe_bits
+        committee_bits
             .set(1, true)
             .expect("should set committee bit");
         let new_attestation_key_electra =

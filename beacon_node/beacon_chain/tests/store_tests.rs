@@ -3072,7 +3072,7 @@ async fn deneb_prune_blobs_happy_case() {
         )
         .await;
 
-    // Prior to manual pruning with an artifically low data availability boundary all blobs should
+    // Prior to manual pruning with an artificially low data availability boundary all blobs should
     // be stored.
     assert_eq!(
         store.get_blob_info().oldest_blob_slot,
@@ -3263,7 +3263,7 @@ async fn deneb_prune_blobs_margin_test(margin: u64) {
         )
         .await;
 
-    // Prior to manual pruning with an artifically low data availability boundary all blobs should
+    // Prior to manual pruning with an artificially low data availability boundary all blobs should
     // be stored.
     assert_eq!(
         store.get_blob_info().oldest_blob_slot,
